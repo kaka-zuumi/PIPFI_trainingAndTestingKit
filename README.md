@@ -58,7 +58,7 @@ where the predicted energies and forces are compared with the actual energies an
 
 ## How is the neural network stored?
 
-A neural network is defined by its (1) architecture, (2) inputs, and (3) parameters, where the parameters is usually a large number of adjustable weights and biases. The example below shows a 311-20-29-1 architecture where the 311 input neurons are a function of the atomic coordinates. For a PES, the single value predicted at the end is the energy.
+A neural network is defined by its (1) architecture, (2) inputs, and (3) parameters, where the parameters is usually a large number of adjustable weights and biases. The example below shows a 311-20-29-1 architecture where the 311 input neurons are a function of the 7 atomic coordinates. For a PES, the single value predicted at the end is the energy.
 
 ![Alt text](arch1.png?raw=true "Neural Network Architecture")
 

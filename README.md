@@ -43,7 +43,7 @@ To figure out the minimum and maximum bounds for the training set given, execute
 
 The resulting bounds are stored in the header section of "checkpoints/net.1-0".
 
-The input neural network can be adjusted in the file "net.1". Here, the bounds of the inputs (as seen above) can be adjusted. Following this, the network may be trained with:
+The input neural network can be adjusted in the network file "net.1". Details for how to adjust the network file are given in the next section. Following this, the network may be trained with:
 ```
 ./training.x
 ```

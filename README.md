@@ -154,3 +154,69 @@ dPIPfile = obj/BrClH2-derivatives.f90
 
 If forces are wanted, the derivatives of the PIPs/FIs are also necessary. The derivatives of a new PIP/FI file can automatically be generated acccording to the command in "README.txt". In this example, they are then stored in "obj/BrClH2-derivatives.f90".
 
+## Examples
+
+### CH_4 + H+ PES
+
+See work in XXXX. A PES was modeled with an average of three PIP neural networks, with network files and PIP file given in the supplementary information. The three network files are here as "net.1.CH5", "net.2.CH5", and "net.3.CH5" and the PIP file is "obj/CH5.f90". To measure the goodness-of-fit of these neural networks, the "testEnergyAndOrForces" executable can be used.
+
+First, edit the "src/testEnergyAndOrForces.f90" file to use the training set, units, and energy minimum as specified in their code. The variable should look something like this:
+```
+program testEnergyAndOrForces
+use pipvariables
+implicit none
+
+! Number of points in training set to use
+! (should be <= the actual maximum)
+!integer,parameter :: Ntot=1000 !169824
+integer,parameter :: Ntot=14982
+!integer,parameter :: Ntot=63041
+
+! The file with the training set
+!character(len=*),parameter :: trainingsetfile = "trainingsets/BrCH5.set1.xyz"
+!character(len=*),parameter :: trainingsetfile = "trainingsets/BrClH2.setB2.xyz"
+character(len=*),parameter :: trainingsetfile = "trainingsets/CH5.set1.xyz"
+
+! Conversion to internal units (eV)
+!real(kind=8),parameter :: ev=0.04336412 ! Energy is originally in kcal/mol
+real(kind=8),parameter :: ev=27.21138505d0 ! Energy is originally in Hartree
+
+! Minimum energy to shift all energies by
+!real*8,parameter :: vzero = -1639812.67919d0 ! Energy is originally in kcal/mol
+!real*8,parameter :: vzero = -1903000.871424484765d0 ! Energy is originally in kcal/mol
+real*8,parameter :: vzero = -40.95588433d0 ! Energy is originally in Hartree
+
+! The number of points to train with...
+! the rest will be used for validation
+integer :: Ntrain = (Ntot*3)/4
+
+! Predict forces and calculate force errors
+logical :: calculate_forces = .false.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+```
+
+Forces are not included so "calculate_forces" is set to false.
+
+Then, just compile and execute the CH5 PES with the first network file and training set.
+```
+make clean
+make testEnergyAndOrForces.x
+cp net.1.CH5 net.1
+cp net.1.CH5 net.1.restart
+
+./testEnergyAndOrForces.x
+```
+
+The output for the *first* network file should look something like this:
+```
+...
+ 
+ Iteration:            1  Time: 101256.411
+  w: -0.187696955874549      dw:   980.025703586431       (max) ...
+E(eV)    MAE:     0.003138 over 63041 points
+E(eV)   RMSE:     0.005401 over 63041 points
+
+```
+
+This individual neural network has an RMSE of 5.40 meV while the averaged model is reported to have an RMSE of 4.18 meV. Both values are well within chemical accuracy and demonstrate a significantly well-modelled surface (given that the training set samples the reaction space well).

@@ -160,7 +160,15 @@ If forces are wanted, the derivatives of the PIPs/FIs are also necessary. The de
 
 See work in https://doi.org/10.1063/1.4921412. A PES was modeled with an average of three PIP neural networks, with network files and PIP file given in the supplementary information. The three network files are here as "net.1.CH5", "net.2.CH5", and "net.3.CH5" and the PIP file is "obj/CH5.f90". To measure the goodness-of-fit of these neural networks, the "testEnergyAndOrForces" executable can be used.
 
-First, edit the "src/testEnergyAndOrForces.f90" file to use the training set, units, and energy minimum as specified in their code. The variable should look something like this:
+First, edit the "GNUmakefile" to use the PIP file they used. The header should look something like:
+```
+#PIPfile = obj/BrClH2.f90
+#dPIPfile = obj/BrClH2-derivatives.f90
+
+PIPfile = obj/CH5.f90
+```
+
+Second, edit the "src/testEnergyAndOrForces.f90" file to use the training set, units, and energy minimum as specified in their code. The variable should look something like this:
 ```
 program testEnergyAndOrForces
 use pipvariables

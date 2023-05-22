@@ -1,10 +1,20 @@
 
 
-Intel fortran (with BLAS, MKL interfacing with LAPACK) can be installed free here:
+Intel fortran (with BLAS, MKL interfacing with LAPACK) can be installed here:
 # https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html
 
+
 At the beginning of a session, you must summon Intel fortran with:
+
+  On a desktop:
 # source /opt/intel/oneapi/setvars.sh 
+
+  On an example HPC server:
+# . ~/.bashrc
+# module purge
+# module load toolchain/intel/2018.5.274
+# module load numlib/ScaLAPACK/2.1.0-gompi-2021b-fb
+
 
 
 

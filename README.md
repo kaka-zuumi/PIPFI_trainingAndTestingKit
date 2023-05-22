@@ -58,6 +58,8 @@ where the predicted energies and forces are compared with the actual energies an
 
 ## How is the neural network stored?
 
+![Alt text](arch1.png?raw=true "Neural Network Architecture")
+
 A neural network is defined by its (1) architecture, (2) inputs, and (3) parameters, where the parameters is usually a large number of adjustable weights and biases. Nearly all of this information is specified in a single network file: "net.1". The header describes the architecture: the number of hidden layers, the number of neurons per layer, and the total number of parameters. The second section describes the inputs' bounds: the minimum and maximum value of each input (and one extra line for the output). The last section describes the parameters: The connection between each layer and the next neurons is given as a set of four indexes, followed by the value of each parameter in a single column. Finally, the way the inputs are defined (with respect to the coordinates) are specified in the PIPfile. 
 
 ### The network file

@@ -177,8 +177,8 @@ implicit none
 ! Number of points in training set to use
 ! (should be <= the actual maximum)
 !integer,parameter :: Ntot=1000 !169824
-integer,parameter :: Ntot=14982
-!integer,parameter :: Ntot=63041
+!integer,parameter :: Ntot=14982
+integer,parameter :: Ntot=63041
 
 ! The file with the training set
 !character(len=*),parameter :: trainingsetfile = "trainingsets/BrCH5.set1.xyz"

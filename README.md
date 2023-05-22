@@ -156,7 +156,7 @@ If forces are wanted, the derivatives of the PIPs/FIs are also necessary. The de
 
 ## Examples
 
-### CH_4 + H+ PES
+### CH<sub>4</sub> + H<sup>+</sup> PES
 
 See work in XXXX. A PES was modeled with an average of three PIP neural networks, with network files and PIP file given in the supplementary information. The three network files are here as "net.1.CH5", "net.2.CH5", and "net.3.CH5" and the PIP file is "obj/CH5.f90". To measure the goodness-of-fit of these neural networks, the "testEnergyAndOrForces" executable can be used.
 

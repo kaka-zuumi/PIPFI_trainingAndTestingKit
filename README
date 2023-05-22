@@ -18,7 +18,7 @@ At the beginning of a session, you must summon Intel fortran with:
 
 
 
-Make a NN with 2 hidden layers with architecture X-Y-Z:
+Make a NN with 2 hidden layers with architecture X-Y-Z-1 (e.g. X=528,Y=20,Z=29):
 # echo "528 20 29" | awk '{print 2; print $1; print $2; print $3; Nw=$1*($2)+$2*($3+1)+$3*(1+1)+1; print Nw; for(i=1;i<=$1+1;i++){printf "%.8f  %.8f\n", 0.0, 1.0}; i1=1;0;for(i=1;i<=$2;i++){i2+=$1+1;printf "%6d %6d    %6d %6d\n", 0+1, $1+1, i1, i2;i1+=$1+1};for(i=1;i<=$3;i++){i2+=$2+1;printf "%6d %6d    %6d %6d\n", $1+1+1,$1+1+$2+1, i1, i2;i1+=$2+1};printf "%6d %6d    %6d %6d\n", $1+1+$2+1+1, $1+1+$2+1+$3+1, i1, i1+$3; for(i=1;i<=Nw;i++){printf "%.8f\n", 0.50}}'
 
 

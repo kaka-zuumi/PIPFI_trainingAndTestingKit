@@ -1,10 +1,12 @@
 # Simplified PIP Neural Network Training and Testing
 
-A set of fortran code that trains a neural network given (1) a training set and (2) neural network architecture. To the current date, only networks with exactly two hidden layers and one output layer (i.e., the energy) are supported. Energy and force errors can subsequently be tested.
+A set of fortran code that trains a neural network given (1) a training set, (2) a set of inputs, and (3) a neural network architecture. To the current date, only networks with exactly two hidden layers and one output layer (i.e., the energy) are supported. Energy and force errors can subsequently be tested.
 
 ## Getting Started
 
-See XXX for information on how PIP/FI neural networks can be used to model potential energy surfaces. The following repositories have fortran code that may be used as *input* for the training and testing. Two examples are given here: BrClH2 (molecular formula ABC2) and BrCH5 (ABC5).
+See XXX for information on how PIP/FI neural networks can be used to model potential energy surfaces. The following repositories have fortran code that may be used as *input* for the training and testing: XXXX. Two examples are given here: BrClH2 (molecular formula ABC2) and BrCH5 (ABC5).
+
+A neural network is defined by its (1) architecture, (2) inputs, and (3) parameters, where the parameters is usually a large number of adjustable weights and biases. Nearly all of this information is specified in a single file: "net.1". The header describes the architecture: the number of hidden layers, the number of neurons per layer, and the total number of parameters. The second section describes the inputs' bounds: the minimum and maximum value of each input (and one extra line for the output). The last section describes the parameters: The connection between each layer and the next neurons is given as a set of four indexes, followed by the value of each parameter in a single column. Finally, the way the inputs are defined (with respect to the coordinates) are specified in the PIPfile. 
 
 ### Prerequisites
 

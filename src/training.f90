@@ -6,17 +6,21 @@ implicit none
 ! (should be <= the actual maximum)
 !integer,parameter :: Ntot=1000 !169824
 integer,parameter :: Ntot=14982
+!integer,parameter :: Ntot=63041
 
 ! The file with the training set
 !character(len=*),parameter :: trainingsetfile = "trainingsets/BrCH5.set1.xyz"
 character(len=*),parameter :: trainingsetfile = "trainingsets/BrClH2.setB2.xyz"
+!character(len=*),parameter :: trainingsetfile = "trainingsets/CH5.set1.xyz"
 
 ! Conversion to internal units (eV)
 real(kind=8),parameter :: ev=0.04336412 ! Energy is originally in kcal/mol
+!real(kind=8),parameter :: ev=27.21138505d0 ! Energy is originally in kcal/mol
 
 ! Minimum energy to shift all energies by
 !real*8,parameter :: vzero = -1639812.67919d0 ! Energy is originally in kcal/mol
 real*8,parameter :: vzero = -1903000.871424484765d0 ! Energy is originally in kcal/mol
+!real*8,parameter :: vzero = -40.95588433d0 ! Energy is originally in kcal/mol
 
 ! The number of points to train with...
 ! the rest will be used for validation
@@ -46,7 +50,11 @@ do i=1,Ntot
   read(1,*) ene(i)
   ene(i)=(ene(i)-(vzero))*ev
   do j=1,natom
-    read(1,*) atom(j),x(:,j), f(:,j)
+
+!   Don't read forces in yet, since we cannot train on them
+!   read(1,*) atom(j),x(:,j), f(:,j)
+
+    read(1,*) atom(j),x(:,j)
   enddo
 
   call get_r(natom,x,r(:,i))

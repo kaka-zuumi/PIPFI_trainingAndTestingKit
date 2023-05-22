@@ -6,21 +6,28 @@ implicit none
 ! (should be <= the actual maximum)
 !integer,parameter :: Ntot=1000 !169824
 integer,parameter :: Ntot=14982
+!integer,parameter :: Ntot=63041
 
 ! The file with the training set
 !character(len=*),parameter :: trainingsetfile = "trainingsets/BrCH5.set1.xyz"
 character(len=*),parameter :: trainingsetfile = "trainingsets/BrClH2.setB2.xyz"
+!character(len=*),parameter :: trainingsetfile = "trainingsets/CH5.set1.xyz"
 
 ! Conversion to internal units (eV)
 real(kind=8),parameter :: ev=0.04336412 ! Energy is originally in kcal/mol
+!real(kind=8),parameter :: ev=27.21138505d0 ! Energy is originally in kcal/mol
 
 ! Minimum energy to shift all energies by
 !real*8,parameter :: vzero = -1639812.67919d0 ! Energy is originally in kcal/mol
 real*8,parameter :: vzero = -1903000.871424484765d0 ! Energy is originally in kcal/mol
+!real*8,parameter :: vzero = -40.95588433d0 ! Energy is originally in kcal/mol
 
 ! The number of points to train with...
 ! the rest will be used for validation
 integer :: Ntrain = (Ntot*3)/4
+
+! Predict forces and calculate force errors
+logical :: calculate_forces = .true.
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -38,7 +45,6 @@ integer :: natom,i,j,k,n,id,itmp
 integer,dimension(Ntot) :: training_indices, shuffled_indices
 real*8 :: validationMAE, validationRMSE
 
-logical :: calculate_forces = .true.
 real*8,parameter :: inverseDistanceIsZeroThreshhold = dexp(-(20.0d0**2))
 real(kind=8),external :: ddot
 real*8 :: fmae, frmse
@@ -52,9 +58,16 @@ do i=1,Ntot
   read(1,*) natom
   read(1,*) ene(i)
   ene(i)=(ene(i)-(vzero))*ev
-  do j=1,Natoms
-    read(1,*) atom(j),x(:,j), f(i,:,j)
-  enddo
+
+  if (calculate_forces) then
+    do j=1,Natoms
+      read(1,*) atom(j),x(:,j), f(i,:,j)
+    enddo
+  else
+    do j=1,Natoms
+      read(1,*) atom(j),x(:,j)
+    enddo
+  end if
 
   if (calculate_forces) then
     call get_rANDdr(Natoms,x,r(:,i),dr)

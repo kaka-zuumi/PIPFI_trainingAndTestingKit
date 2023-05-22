@@ -158,7 +158,9 @@ If forces are wanted, the derivatives of the PIPs/FIs are also necessary. The de
 
 ### CH<sub>4</sub> + H PES
 
-See work in https://doi.org/10.1063/1.4921412. A PES was modeled with an average of three PIP neural networks, with network files and PIP file given in the supplementary information. The three network files are here as "net.1.CH5", "net.2.CH5", and "net.3.CH5" and the PIP file is "obj/CH5.f90". To measure the goodness-of-fit of these neural networks, the "testEnergyAndOrForces" executable can be used.
+See work in https://doi.org/10.1063/1.4921412. A PES was modeled with an average of three PIP neural networks, with network files and PIP file given in the supplementary information. The reactants, intermediates, transition states, and products along the reaction pathway are shown in the figure below. The three network files are here as "net.1.CH5", "net.2.CH5", and "net.3.CH5" and the PIP file is "obj/CH5.f90". To measure the goodness-of-fit of these neural networks, the "testEnergyAndOrForces" executable can be used.
+
+![Alt text](CH5.PES1.jpeg?raw=true "CH5 PES")
 
 First, edit the "GNUmakefile" to use the PIP file they used. The header should look something like:
 ```

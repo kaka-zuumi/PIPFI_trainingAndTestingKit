@@ -22,12 +22,15 @@ After getting the preqrequisites ready, the code can be quickly downloaded, comp
 
 First, download the github source code:
 ```
-blah blah blah
+git clone https://github.com/kaka-zuumi/PIPFI_trainingAndTestingKit.git
 ```
 
 Second, prepare the header of the GNUmakefile so as to point to the correct fortran package.
 ```
-blah blah blah
+# On an example Linux desktop, these LIBs and INLCUDEs work:
+MKLROOT = /opt/intel/oneapi/mkl/2023.1.0
+LIB = -L${MKLROOT}/lib/intel64 -qmkl -lmkl_intel_ilp64 -lmkl_core -lmkl_intel_thread -lmkl_lapack95_ilp64 -lmkl_blas95_ilp64
+INCLUDE = -I${MKLROOT}/include/intel64/ilp64 -i8  -I"${MKLROOT}/include"
 ```
 
 Third, make.

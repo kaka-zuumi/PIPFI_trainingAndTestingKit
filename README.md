@@ -107,7 +107,7 @@ The final single-column section is the value of each parameter in the neural net
 
 ### The PIP file
 
-The PIP file specified how the inputs are made. For the BrClH2 system, an example is given in "obj/BrClH2.f90":
+The PIP file specifies how the inputs are made. For the BrClH2 system, an example is given in "obj/BrClH2.f90":
 ```
 module pipvariables
 implicit none
@@ -147,4 +147,6 @@ The number of polynomials described here (7) must match the number of input neur
 PIPfile = obj/BrClH2.f90
 dPIPfile = obj/BrClH2-derivatives.f90
 ```
+
+If forces are wanted, the derivatives of the PIPs/FIs are also necessary. The derivatives of a new PIP/FI file can automatically be generated acccording to the command in "README.txt". In this example, they are then stored in "obj/BrClH2-derivatives.f90".
 

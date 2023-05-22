@@ -4,7 +4,7 @@ A set of fortran code that trains a neural network given (1) a training set, (2)
 
 ## Getting Started
 
-See https://doi.org/10.1063/5.0010104 for information on how PIP/FI neural networks can be used to model potential energy surfaces. The following repositories have fortran code that may be used as *input* for the training and testing: https://github.com/kjshao/FI, https://github.com/Chenrongjun/FI. Two examples are given here: BrClH2 (molecular formula ABC2) and BrCH5 (ABC5).
+See https://doi.org/10.1063/5.0010104 for information on how PIP/FI neural networks can be used to model potential energy surfaces (PESs). The following repositories have fortran code that may be used as *input* for the training and testing: https://github.com/kjshao/FI, https://github.com/Chenrongjun/FI. Two examples are given here: BrClH2 (molecular formula ABC2) and BrCH5 (ABC5).
 
 ### Prerequisites
 
@@ -58,9 +58,11 @@ where the predicted energies and forces are compared with the actual energies an
 
 ## How is the neural network stored?
 
+A neural network is defined by its (1) architecture, (2) inputs, and (3) parameters, where the parameters is usually a large number of adjustable weights and biases. The example below shows a 311-20-29-1 architecture where the 311 input neurons are a function of the atomic coordinates. For a PES, the single value predicted at the end is the energy.
+
 ![Alt text](arch1.png?raw=true "Neural Network Architecture")
 
-A neural network is defined by its (1) architecture, (2) inputs, and (3) parameters, where the parameters is usually a large number of adjustable weights and biases. Nearly all of this information is specified in a single network file: "net.1". The header describes the architecture: the number of hidden layers, the number of neurons per layer, and the total number of parameters. The second section describes the inputs' bounds: the minimum and maximum value of each input (and one extra line for the output). The last section describes the parameters: The connection between each layer and the next neurons is given as a set of four indexes, followed by the value of each parameter in a single column. Finally, the way the inputs are defined (with respect to the coordinates) are specified in the PIPfile. 
+Nearly all of this information is specified in a single network file: "net.1". The header describes the architecture: the number of hidden layers, the number of neurons per layer, and the total number of parameters. The second section describes the inputs' bounds: the minimum and maximum value of each input (and one extra line for the output). The last section describes the parameters: The connection between each layer and the next neurons is given as a set of four indexes, followed by the value of each parameter in a single column. Finally, the way the inputs are defined (with respect to the coordinates) are specified in the PIPfile. 
 
 ### The network file
 

@@ -1,0 +1,528 @@
+rm -f  mod/*.mod training.x lookAtBounds.x testEnergyAndOrForces.x
+ifort  src/training.f90 -O2 -qopenmp -module mod -traceback -L/opt/apps/software/numlib/ScaLAPACK/2.1.0-gompi-2021b-fb/lib -lscalapack -lmkl_intel_thread -lmkl_core -liomp5 -lmkl_intel_lp64 \
+obj/pes.o obj/BrClH2.o obj/BrClH2-derivatives.o -o training.x
+ifort  src/lookAtBounds.f90 -O2 -qopenmp -module mod -traceback -L/opt/apps/software/numlib/ScaLAPACK/2.1.0-gompi-2021b-fb/lib -lscalapack -lmkl_intel_thread -lmkl_core -liomp5 -lmkl_intel_lp64 \
+obj/pes.o obj/BrClH2.o obj/BrClH2-derivatives.o -o lookAtBounds.x
+ifort  src/testEnergyAndOrForces.f90 -O2 -qopenmp -module mod -traceback -L/opt/apps/software/numlib/ScaLAPACK/2.1.0-gompi-2021b-fb/lib -lscalapack -lmkl_intel_thread -lmkl_core -liomp5 -lmkl_intel_lp64 \
+obj/pes.o obj/BrClH2.o obj/BrClH2-derivatives.o -o testEnergyAndOrForces.x
+ Percentage loaded:    4.999332     %
+ Percentage loaded:    9.998665     %
+ Percentage loaded:    14.99800     %
+ Percentage loaded:    19.99733     %
+ Percentage loaded:    24.99666     %
+ Percentage loaded:    29.99599     %
+ Percentage loaded:    34.99533     %
+ Percentage loaded:    39.99466     %
+ Percentage loaded:    44.99399     %
+ Percentage loaded:    49.99332     %
+ Percentage loaded:    54.99266     %
+ Percentage loaded:    59.99199     %
+ Percentage loaded:    64.99133     %
+ Percentage loaded:    69.99065     %
+ Percentage loaded:    74.98999     %
+ Percentage loaded:    79.98932     %
+ Percentage loaded:    84.98866     %
+ Percentage loaded:    89.98798     %
+ Percentage loaded:    94.98732     %
+ Percentage loaded:    99.98665     %
+ We see that nfits is:            3
+ We see that nl(0,ii) is:            7
+ We see that nw is:         2379 ...
+ We're initializing the weights from random numbers!
+ 
+ Iteration:            0  Time: 120019.604
+ Percentage loaded:    4.999332     %
+ Percentage loaded:    9.998665     %
+ Percentage loaded:    14.99800     %
+ Percentage loaded:    19.99733     %
+ Percentage loaded:    24.99666     %
+ Percentage loaded:    29.99599     %
+ Percentage loaded:    34.99533     %
+ Percentage loaded:    39.99466     %
+ Percentage loaded:    44.99399     %
+ Percentage loaded:    49.99332     %
+ Percentage loaded:    54.99266     %
+ Percentage loaded:    59.99199     %
+ Percentage loaded:    64.99133     %
+ Percentage loaded:    69.99065     %
+ Percentage loaded:    74.98999     %
+ Percentage loaded:    79.98932     %
+ Percentage loaded:    84.98866     %
+ Percentage loaded:    89.98798     %
+ Percentage loaded:    94.98732     %
+ Percentage loaded:    99.98665     %
+ We see that nfits is:            3
+ We see that nl(0,ii) is:            7
+ We see that nw is:         2379 ...
+ We're initializing the weights from random numbers!
+ 
+ 
+ Iteration:            1  Time: 120020.087
+  MAE:    1.61132624075901       over        11236  points
+ RMSE:    1.67230508221514       over        11236  points
+ VALIDATION  MAE:    1.59972698224869       over         3746  points
+ VALIDATION RMSE:    1.66357224769600       over         3746  points
+ LM step start     Time: 120022.509
+ LM step has ... been accepted!   Time: 120022.682
+ 
+ 
+ Iteration:            2  Time: 120022.699
+  MAE:    1.61894719689637       over        11236  points
+ RMSE:    1.67880416815344       over        11236  points
+ VALIDATION  MAE:    1.60866375852222       over         3746  points
+ VALIDATION RMSE:    1.67124199561661       over         3746  points
+ LM step start     Time: 120025.011
+ LM step has NOT been accepted!    Time: 120025.160
+ 
+ 
+ Iteration:            3  Time: 120025.303
+  MAE:    1.61514518869790       over        11236  points
+ RMSE:    1.67509122340189       over        11236  points
+ VALIDATION  MAE:    1.60459357260711       over         3746  points
+ VALIDATION RMSE:    1.66725203721992       over         3746  points
+ LM step start     Time: 120027.617
+ LM step has NOT been accepted!    Time: 120027.754
+ 
+ 
+ Iteration:            4  Time: 120027.896
+  MAE:    1.60625802719833       over        11236  points
+ RMSE:    1.66708963080247       over        11236  points
+ VALIDATION  MAE:    1.59481128634711       over         3746  points
+ VALIDATION RMSE:    1.65844459198865       over         3746  points
+ LM step start     Time: 120030.054
+ LM step has ... been accepted!   Time: 120030.194
+ 
+ 
+ Iteration:            5  Time: 120030.210
+  MAE:    1.60377074292787       over        11236  points
+ RMSE:    1.66450324705754       over        11236  points
+ VALIDATION  MAE:    1.59245710752667       over         3746  points
+ VALIDATION RMSE:    1.65595248218327       over         3746  points
+ LM step start     Time: 120032.366
+ LM step has ... been accepted!   Time: 120032.518
+ 
+ 
+ Iteration:            6  Time: 120032.810
+  MAE:    1.55954475579406       over        11236  points
+ RMSE:    1.61977922831598       over        11236  points
+ VALIDATION  MAE:    1.54838210622718       over         3746  points
+ VALIDATION RMSE:    1.61106221937680       over         3746  points
+ LM step start     Time: 120034.971
+ LM step has ... been accepted!   Time: 120035.108
+ 
+ 
+ Iteration:            7  Time: 120035.123
+  MAE:    1.48144493116471       over        11236  points
+ RMSE:    1.54414001481583       over        11236  points
+ VALIDATION  MAE:    1.47168836090598       over         3746  points
+ VALIDATION RMSE:    1.53635968662015       over         3746  points
+ LM step start     Time: 120037.336
+ LM step has ... been accepted!   Time: 120037.487
+ 
+ 
+ Iteration:            8  Time: 120037.502
+  MAE:    1.17580591236128       over        11236  points
+ RMSE:    1.25324388194626       over        11236  points
+ VALIDATION  MAE:    1.16666826569540       over         3746  points
+ VALIDATION RMSE:    1.24435933397817       over         3746  points
+ LM step start     Time: 120040.902
+ LM step has ... been accepted!   Time: 120041.076
+ 
+ 
+ Iteration:            9  Time: 120041.093
+  MAE:    1.08154717205228       over        11236  points
+ RMSE:    1.18512513214064       over        11236  points
+ VALIDATION  MAE:    1.08257774615618       over         3746  points
+ VALIDATION RMSE:    1.18542249411246       over         3746  points
+ LM step start     Time: 120044.414
+ LM step has ... been accepted!   Time: 120044.624
+ 
+ 
+ Iteration:           10  Time: 120044.639
+  MAE:    1.44605796243292       over        11236  points
+ RMSE:    1.96303703857179       over        11236  points
+ VALIDATION  MAE:    1.46957297836332       over         3746  points
+ VALIDATION RMSE:    1.97468572666658       over         3746  points
+ LM step start     Time: 120046.919
+ LM step has NOT been accepted!    Time: 120047.067
+ 
+ 
+ Iteration:           11  Time: 120047.467
+  MAE:    1.13798612910800       over        11236  points
+ RMSE:    1.22386284852528       over        11236  points
+ VALIDATION  MAE:    1.13094238095050       over         3746  points
+ VALIDATION RMSE:    1.21756732748175       over         3746  points
+ LM step start     Time: 120049.790
+ LM step has NOT been accepted!    Time: 120049.936
+ 
+ 
+ Iteration:           12  Time: 120050.098
+  MAE:   0.559552684947085       over        11236  points
+ RMSE:   0.741288136203332       over        11236  points
+ VALIDATION  MAE:   0.553447007686070       over         3746  points
+ VALIDATION RMSE:   0.732368532854799       over         3746  points
+ LM step start     Time: 120052.408
+ LM step has ... been accepted!   Time: 120052.564
+ 
+ 
+ Iteration:           13  Time: 120052.579
+  MAE:   0.634437469709440       over        11236  points
+ RMSE:   0.831512952695808       over        11236  points
+ VALIDATION  MAE:   0.629400143332313       over         3746  points
+ VALIDATION RMSE:   0.822452625282291       over         3746  points
+ LM step start     Time: 120054.888
+ LM step has NOT been accepted!    Time: 120055.034
+ 
+ 
+ Iteration:           14  Time: 120055.195
+  MAE:   0.940669984616602       over        11236  points
+ RMSE:    1.02580479035472       over        11236  points
+ VALIDATION  MAE:   0.928535457092558       over         3746  points
+ VALIDATION RMSE:    1.01561168959212       over         3746  points
+ LM step start     Time: 120057.507
+ LM step has NOT been accepted!    Time: 120057.663
+ 
+ 
+ Iteration:           15  Time: 120057.832
+  MAE:   0.518562032181479       over        11236  points
+ RMSE:   0.704638936234567       over        11236  points
+ VALIDATION  MAE:   0.513705679450138       over         3746  points
+ VALIDATION RMSE:   0.698113271972485       over         3746  points
+ LM step start     Time: 120100.141
+ LM step has ... been accepted!   Time: 120100.305
+ 
+ 
+ Iteration:           16  Time: 120100.573
+  MAE:   0.629828374754747       over        11236  points
+ RMSE:   0.776265930316566       over        11236  points
+ VALIDATION  MAE:   0.625553947480147       over         3746  points
+ VALIDATION RMSE:   0.769396077368284       over         3746  points
+ LM step start     Time: 120102.921
+ LM step has NOT been accepted!    Time: 120103.082
+ 
+ 
+ Iteration:           17  Time: 120103.256
+  MAE:   0.490515817807652       over        11236  points
+ RMSE:   0.686592788168102       over        11236  points
+ VALIDATION  MAE:   0.486289134421821       over         3746  points
+ VALIDATION RMSE:   0.681140436344438       over         3746  points
+ LM step start     Time: 120105.616
+ LM step has ... been accepted!   Time: 120105.788
+ 
+ 
+ Iteration:           18  Time: 120105.815
+  MAE:   0.460494526914530       over        11236  points
+ RMSE:   0.669855379459498       over        11236  points
+ VALIDATION  MAE:   0.458555001139057       over         3746  points
+ VALIDATION RMSE:   0.665959493599091       over         3746  points
+ LM step start     Time: 120108.263
+ LM step has ... been accepted!   Time: 120108.441
+ 
+ 
+ Iteration:           19  Time: 120108.479
+  MAE:   0.380505300350654       over        11236  points
+ RMSE:   0.613896733156374       over        11236  points
+ VALIDATION  MAE:   0.379191944699603       over         3746  points
+ VALIDATION RMSE:   0.609638550404445       over         3746  points
+ LM step start     Time: 120110.878
+ LM step has ... been accepted!   Time: 120111.036
+ 
+ 
+ Iteration:           20  Time: 120111.051
+  MAE:   0.977922719080348       over        11236  points
+ RMSE:    1.07900002608590       over        11236  points
+ VALIDATION  MAE:   0.957794198891439       over         3746  points
+ VALIDATION RMSE:    1.05714891752164       over         3746  points
+ LM step start     Time: 120113.372
+ LM step has NOT been accepted!    Time: 120113.519
+ 
+ 
+ Iteration:           21  Time: 120120.912
+  MAE:   0.417106132518822       over        11236  points
+ RMSE:   0.584388773118851       over        11236  points
+ VALIDATION  MAE:   0.409440785179371       over         3746  points
+ VALIDATION RMSE:   0.573317497139540       over         3746  points
+ LM step start     Time: 120123.185
+ LM step has ... been accepted!   Time: 120123.332
+ 
+ 
+ Iteration:           22  Time: 120123.347
+  MAE:    1.94815351335254       over        11236  points
+ RMSE:    2.03508329730584       over        11236  points
+ VALIDATION  MAE:    1.93248381949289       over         3746  points
+ VALIDATION RMSE:    2.02261502058951       over         3746  points
+ LM step start     Time: 120125.569
+ LM step has NOT been accepted!    Time: 120125.724
+ 
+ 
+ Iteration:           23  Time: 120125.894
+  MAE:   0.354539464723701       over        11236  points
+ RMSE:   0.532905157067867       over        11236  points
+ VALIDATION  MAE:   0.344480627277607       over         3746  points
+ VALIDATION RMSE:   0.519070159127336       over         3746  points
+ LM step start     Time: 120128.171
+ LM step has ... been accepted!   Time: 120128.346
+ 
+ 
+ Iteration:           24  Time: 120128.376
+  MAE:   0.514237301592873       over        11236  points
+ RMSE:   0.662528145625191       over        11236  points
+ VALIDATION  MAE:   0.494376539074457       over         3746  points
+ VALIDATION RMSE:   0.636209331166170       over         3746  points
+ LM step start     Time: 120130.782
+ LM step has NOT been accepted!    Time: 120130.978
+ 
+ 
+ Iteration:           25  Time: 120131.186
+  MAE:   0.332828459705652       over        11236  points
+ RMSE:   0.508364117696193       over        11236  points
+ VALIDATION  MAE:   0.327465191524621       over         3746  points
+ VALIDATION RMSE:   0.499370202883320       over         3746  points
+ LM step start     Time: 120133.776
+ LM step has ... been accepted!   Time: 120133.972
+ 
+ 
+ Iteration:           26  Time: 120134.340
+  MAE:   0.400300318517355       over        11236  points
+ RMSE:   0.541723732449964       over        11236  points
+ VALIDATION  MAE:   0.391421474092873       over         3746  points
+ VALIDATION RMSE:   0.527081863476595       over         3746  points
+ LM step start     Time: 120136.540
+ LM step has NOT been accepted!    Time: 120136.700
+ 
+ 
+ Iteration:           27  Time: 120136.863
+  MAE:   0.340636542786968       over        11236  points
+ RMSE:   0.514393166328431       over        11236  points
+ VALIDATION  MAE:   0.332868053775045       over         3746  points
+ VALIDATION RMSE:   0.502257930541871       over         3746  points
+ LM step start     Time: 120139.115
+ LM step has NOT been accepted!    Time: 120139.284
+ 
+ 
+ Iteration:           28  Time: 120139.469
+  MAE:   0.337130215694528       over        11236  points
+ RMSE:   0.511254298165690       over        11236  points
+ VALIDATION  MAE:   0.329390088892554       over         3746  points
+ VALIDATION RMSE:   0.499640615698378       over         3746  points
+ LM step start     Time: 120141.827
+ LM step has NOT been accepted!    Time: 120142.022
+ 
+ 
+ Iteration:           29  Time: 120142.218
+  MAE:   0.342120742544614       over        11236  points
+ RMSE:   0.520263469343493       over        11236  points
+ VALIDATION  MAE:   0.335287159480888       over         3746  points
+ VALIDATION RMSE:   0.509980906531095       over         3746  points
+ LM step start     Time: 120144.795
+ LM step has NOT been accepted!    Time: 120145.009
+ 
+ 
+ Iteration:           30  Time: 120145.159
+  MAE:   0.334157689772072       over        11236  points
+ RMSE:   0.511644812068209       over        11236  points
+ VALIDATION  MAE:   0.328262968846977       over         3746  points
+ VALIDATION RMSE:   0.501685571837976       over         3746  points
+ LM step start     Time: 120147.359
+ LM step has NOT been accepted!    Time: 120147.505
+ 
+ 
+ Iteration:           31  Time: 120147.932
+  MAE:   0.330806725179818       over        11236  points
+ RMSE:   0.505047109895801       over        11236  points
+ VALIDATION  MAE:   0.324307177365175       over         3746  points
+ VALIDATION RMSE:   0.494408579976852       over         3746  points
+ LM step start     Time: 120150.264
+ LM step has ... been accepted!   Time: 120150.434
+ 
+ 
+ Iteration:           32  Time: 120150.465
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735854       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120152.848
+ LM step has NOT been accepted!    Time: 120152.906
+ 
+ 
+ Iteration:           33  Time: 120152.966
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229804       over         3746  points
+ LM step start     Time: 120155.322
+ LM step has NOT been accepted!    Time: 120155.388
+ 
+ 
+ Iteration:           34  Time: 120155.462
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120157.957
+ LM step has NOT been accepted!    Time: 120158.059
+ 
+ 
+ Iteration:           35  Time: 120158.170
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735854       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120201.387
+ LM step has NOT been accepted!    Time: 120201.493
+ 
+ 
+ Iteration:           36  Time: 120207.583
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120210.091
+ LM step has NOT been accepted!    Time: 120210.145
+ 
+ 
+ Iteration:           37  Time: 120210.203
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120212.526
+ LM step has NOT been accepted!    Time: 120212.582
+ 
+ 
+ Iteration:           38  Time: 120212.644
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735852       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120214.967
+ LM step has NOT been accepted!    Time: 120215.019
+ 
+ 
+ Iteration:           39  Time: 120215.078
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735851       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120217.387
+ LM step has NOT been accepted!    Time: 120217.440
+ 
+ 
+ Iteration:           40  Time: 120217.501
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120219.836
+ LM step has NOT been accepted!    Time: 120219.889
+ 
+ 
+ Iteration:           41  Time: 120220.222
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735852       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120222.531
+ LM step has NOT been accepted!    Time: 120222.583
+ 
+ 
+ Iteration:           42  Time: 120222.642
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735852       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120224.950
+ LM step has NOT been accepted!    Time: 120225.003
+ 
+ 
+ Iteration:           43  Time: 120225.062
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120227.368
+ LM step has NOT been accepted!    Time: 120227.421
+ 
+ 
+ Iteration:           44  Time: 120227.480
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120229.726
+ LM step has NOT been accepted!    Time: 120229.779
+ 
+ 
+ Iteration:           45  Time: 120229.837
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120232.036
+ LM step has NOT been accepted!    Time: 120232.088
+ 
+ 
+ Iteration:           46  Time: 120232.414
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120234.615
+ LM step has NOT been accepted!    Time: 120234.667
+ 
+ 
+ Iteration:           47  Time: 120234.725
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735852       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120236.926
+ LM step has NOT been accepted!    Time: 120236.979
+ 
+ 
+ Iteration:           48  Time: 120237.340
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120239.572
+ LM step has NOT been accepted!    Time: 120239.625
+ 
+ 
+ Iteration:           49  Time: 120239.683
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735852       over         3746  points
+ VALIDATION RMSE:   0.496488297229804       over         3746  points
+ LM step start     Time: 120241.880
+ LM step has NOT been accepted!    Time: 120241.932
+ 
+ 
+ Iteration:           50  Time: 120241.990
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735853       over         3746  points
+ VALIDATION RMSE:   0.496488297229804       over         3746  points
+ LM step start     Time: 120244.432
+ LM step has NOT been accepted!    Time: 120244.512
+ 
+ 
+ Iteration:           51  Time: 120244.900
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735851       over         3746  points
+ VALIDATION RMSE:   0.496488297229804       over         3746  points
+ LM step start     Time: 120247.201
+ LM step has NOT been accepted!    Time: 120247.253
+ 
+ 
+ Iteration:           52  Time: 120247.311
+  MAE:   0.331339786768023       over        11236  points
+ RMSE:   0.506593846352713       over        11236  points
+ VALIDATION  MAE:   0.325490394735852       over         3746  points
+ VALIDATION RMSE:   0.496488297229805       over         3746  points
+ LM step start     Time: 120249.599
+ LM step has NOT been accepted!    Time: 120249.651
+ 
+ 
+ Iteration:           53  Time: 120249.710

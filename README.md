@@ -227,4 +227,4 @@ E(eV)   RMSE:     0.005401 over 63041 points
 
 ```
 
-This individual neural network has an RMSE of 5.40 meV while the averaged model is reported to have an RMSE of 4.18 meV. Both values are well within chemical accuracy and demonstrate a significantly well-modelled surface (given that the training set samples the reaction space well).
+This individual neural network has an RMSE of 5.4 meV while the averaged model is reported to have an RMSE of 5.1 meV. Both values are well within chemical accuracy and demonstrate a significantly well-modelled surface (given that the training set samples the reaction space well).

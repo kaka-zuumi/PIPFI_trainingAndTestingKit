@@ -10,11 +10,7 @@ A neural network is defined by its (1) architecture, (2) inputs, and (3) paramet
 
 ### Prerequisites
 
-Intel fortran with LAPACK is required.
-
-```
-blah blah blah
-```
+Intel fortran with LAPACK is required. This may be installed from: https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html
 
 ### Installing
 

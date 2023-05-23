@@ -154,6 +154,12 @@ dPIPfile = obj/BrClH2-derivatives.f90
 
 If forces are wanted, the derivatives of the PIPs/FIs are also necessary. The derivatives of a new PIP/FI file can automatically be generated acccording to the command in "README.txt". In this example, they are then stored in "obj/BrClH2-derivatives.f90".
 
+An example of how the fortran header, footer, and subroutine names must be changed is shown below:
+
+Original PIP/FI file       |  Adjusted PIP/FI file
+:-------------------------:|:-------------------------:
+![](PIPfile_start.png)     |  ![](PIPfile_end.png)
+
 ## Examples
 
 ### CH<sub>4</sub> + H PES
